@@ -4,6 +4,7 @@ node_modules/
 .ipynb_checkpoints/
 build/
 dist/
+dist.zip
 distlib/
 target/
 *.tsbuildinfo

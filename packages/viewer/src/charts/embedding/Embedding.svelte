@@ -71,6 +71,13 @@
     onSpecChange,
   }: ChartViewProps<EmbeddingSpec, State> = $props();
 
+  // ★★★★★★★★★★★★★★★★★★★★
+  // ★ 将 Color 选择器的默认值设为 category 列
+  // ★★★★★★★★★★★★★★★★★★★★
+  if (spec.data.category == null) {
+    spec.data.category = "category"; // ★ 新增：默认 Color=category
+  }
+
   let { colorScheme, columnStyles, searchResult } = context;
   let highlightStore = isolatedWritable(context.highlight);
 
