@@ -72,9 +72,23 @@
 
   let isMobileLayout = $derived(containerWidth < 500);
 
+  // 初始化默认值，将默认值实际写入 state
+  $effect(() => {
+    const updates: Partial<ListLayoutState> = {};
+    if (layoutState.showTable === undefined) {
+      updates.showTable = false;
+    }
+    if (layoutState.showCharts === undefined) {
+      updates.showCharts = false;
+    }
+    if (Object.keys(updates).length > 0) {
+      onStateChange(updates);
+    }
+  });
+
   let hasEmbedding = $derived(sections.embedding.length > 0 && (layoutState.showEmbedding ?? true));
-  let hasTable = $derived(sections.table.length > 0 && (layoutState.showTable ?? true));
-  let hasChart = $derived(layoutState.showCharts ?? true);
+  let hasTable = $derived(sections.table.length > 0 && (layoutState.showTable ?? false));
+  let hasChart = $derived(layoutState.showCharts ?? false);
 
   function chartWidth(total: number, desiredWidth: number) {
     const gap = 7;

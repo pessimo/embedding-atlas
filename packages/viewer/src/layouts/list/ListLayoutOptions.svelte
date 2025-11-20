@@ -29,7 +29,7 @@
     icon={IconTable}
     title="Show / hide table"
     bind:checked={
-      () => state.showTable ?? true,
+      () => state.showTable ?? false,
       (v) => {
         onStateChange({ showTable: v });
       }
@@ -39,7 +39,7 @@
     icon={IconMenu}
     title="Show / hide charts"
     bind:checked={
-      () => state.showCharts ?? true,
+      () => state.showCharts ?? false,
       (v) => {
         onStateChange({ showCharts: v });
       }
