@@ -268,6 +268,7 @@
       class="flex-none p-2 rounded-ss-md rounded-ee-md bg-white/75 dark:bg-black/75 backdrop-blur-sm flex items-center gap-2 pointer-events-auto order-1"
     >
       <Select
+        id="category"
         class="max-w-64"
         label="Color"
         value={categoryColumn}
